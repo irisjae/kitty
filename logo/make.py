@@ -29,21 +29,22 @@ def render(output, sz=256, src=unframed_src):
 
 
 def main():
-    render(abspath('kitty.png'))
-    render(abspath('kitty-128.png'), sz=128)
-    iconset = abspath('kitty.iconset')
-    if os.path.exists(iconset):
-        shutil.rmtree(iconset)
-    os.mkdir(iconset)
-    os.chdir(iconset)
-    for sz in (16, 32, 64, 128, 256, 512, 1024):
-        iname = os.path.join(iconset, 'icon_{0}x{0}.png'.format(sz))
-        iname2x = 'icon_{0}x{0}@2x.png'.format(sz // 2)
-        render(iname, sz, src=framed_src)
-        if sz > 16 and sz != 128:
-            shutil.copy2(iname, iname2x)
-        if sz in (64, 1024):
-            os.remove(iname)
+    pass
+    #render(abspath('kitty.png'))
+    #render(abspath('kitty-128.png'), sz=128)
+    #iconset = abspath('kitty.iconset')
+    #if os.path.exists(iconset):
+    #    shutil.rmtree(iconset)
+    #os.mkdir(iconset)
+    #os.chdir(iconset)
+    #for sz in (16, 32, 64, 128, 256, 512, 1024):
+    #    iname = os.path.join(iconset, 'icon_{0}x{0}.png'.format(sz))
+    #    iname2x = 'icon_{0}x{0}@2x.png'.format(sz // 2)
+    #    render(iname, sz, src=framed_src)
+    #    if sz > 16 and sz != 128:
+    #        shutil.copy2(iname, iname2x)
+    #    if sz in (64, 1024):
+    #        os.remove(iname)
 
 
 if __name__ == '__main__':
